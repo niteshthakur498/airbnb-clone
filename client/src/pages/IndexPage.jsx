@@ -13,9 +13,9 @@ const IndexPage = () => {
     });
   }, []);
   return (
-    <div className="mt-8 grid gap-x-6 gap-y-8 grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+    <div className="mt-8 mx-8 grid gap-x-6 gap-y-8 grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
       {places.length > 0 && places.map(place => (
-        <Link to={'/place/'+place._id}>
+        <Link key={place._id} to={'/place/'+place._id}>
           <div className="bg-gray-500 mb-2 rounded-2xl flex">
             {place.photos?.[0] && (
               <Image className="rounded-2xl object-cover aspect-square" src={place.photos?.[0]} alt=""/>
