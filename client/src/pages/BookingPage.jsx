@@ -25,7 +25,7 @@ const BookingPage = () => {
     return '';
   }
   return (
-    <div className="my-8">
+    <div className="m-8">
         <div className="max-w-7xl mx-auto">
             <h1 className="text-3xl">{booking.place.title}</h1>
         <AddressLink className="my-2 block">{booking.place.address}</AddressLink>

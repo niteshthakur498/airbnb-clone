@@ -21,7 +21,7 @@ const PlacePage = () => {
   return (
     <div className="mt-4 mx-8 px-8 pt-8">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl">{place.title}</h1>
+        <h1 className="text-3xl font-semibold">{place.title}</h1>
         <AddressLink  >{place.address}</AddressLink>
         <PlaceGallery place={place} />
         <div className="mt-8 mb-8 grid gap-8 grid-cols-1 md:grid-cols-[2fr_1fr]">

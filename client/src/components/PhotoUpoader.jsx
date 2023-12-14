@@ -49,14 +49,14 @@ const PhotoUpoader = ({addedPhotos,onChange}) => {
     <>
       <div className="flex gap-2">
             <input type="text" value={photoLink}
-               onChange={ev => setPhotoLink(ev.target.value)} placeholder={'Add using Link'}/>
-            <button  onClick={addPhotoByLink} className="bg-gry-200 px-4 rounded-2xl">Add&nbsp;Photo</button>
+               onChange={ev => setPhotoLink(ev.target.value)} placeholder={'Add using Link...'}/>
+            <button  onClick={addPhotoByLink} className="font-medium bg-primary text-white px-4 rounded-2xl">Add&nbsp;Photo</button>
         </div>
         
-        <div className="mt-2 grid gap-2 grid-cols-3 md:grid-cls-4 lg:grid-cols-6">
+        <div className="mt-4 grid gap-2 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
             {addedPhotos.length > 0 && addedPhotos.map(link=>{
                 return (
-                  <div className="h-32 flex relative" key={link}>
+                  <div className="h-40 flex relative" key={link}>
                     <Image className="rounded-2xl w-full object-cover" src={link} alt=""/>
                     <button onClick={ev => removePhoto(ev,link)} className="cursor-pointer absolute bottom-1 right-1 text-white bg-black bg-opacity-50 rounded-2xl py-2 px-2 ">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -80,13 +80,12 @@ const PhotoUpoader = ({addedPhotos,onChange}) => {
                 );
               })
             }
-            <label className="h-32 cursor-pointer flex items-center justify-center gap-1 border bg-transparent rounded-2xl p-6 text-2xl text-gray-600">
+            <label className="h-40 cursor-pointer flex items-center justify-center gap-1 border bg-transparent rounded-2xl p-6 text-2xl text-gray-600">
               <input type="file" multiple className="hidden" onChange={uploadPhoto}/>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
               </svg>
-
-                <span>Upload from Device</span>
+                <span>Upload</span>
             </label>
         </div>
     </>

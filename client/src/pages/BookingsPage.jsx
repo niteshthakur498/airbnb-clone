@@ -15,7 +15,7 @@ const BookingsPage = () => {
   return (
     <div>
       <AccountNav />
-      <div>
+      <div className="mx-8">
         {bookings?.length > 0 && bookings.map(booking => (
           <Link key={booking._id} to={`/account/bookings/${booking._id}`} className="flex gap-4 shadow-lg rounded-2xl overflow-hidden p-2">
             <div className="w-48">

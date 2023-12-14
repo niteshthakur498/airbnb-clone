@@ -40,7 +40,7 @@ const PlacesFormPage = () => {
 
     function inputHeader(text){
         return (
-            <h2 className="text-2xl mt-4 ">{text}</h2>
+            <h2 className="text-2xl mt-6 font-medium">{text}</h2>
         );
     }
     function inputDescription(text){
@@ -84,51 +84,53 @@ const PlacesFormPage = () => {
       }
 
   return (
-    <div>
-      <form onSubmit={savePlace}>
-        {preInput('Title','Title for your place, should be short or catchy')}
-        <input type = "text" value={title} onChange={ev => setTitle(ev.target.value)} placeholder="title"/>
-        {preInput('Address','Address to this place/Location')}
-        <input type = "text" value={address} onChange={ev => setAddress(ev.target.value)} placeholder="Address"/>
-        {preInput('Photos','Photos to this place/Location')}
-        <PhotoUpoader addedPhotos={addedPhotos} onChange={setAddedPhotos}/>
-        {preInput('Description','Description to this place/Location')}
-        <textarea value={description} onChange={ev => setDescription(ev.target.value)} />
-        {preInput('Perks','Select Perks for this place/Location')}
-        <div className="grid mt-5 gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
-            <Perks selected={perks} onChange={setPerks} />
-        </div>
+    <div className="mx-8">
+      <div className="max-w-7xl mx-auto"> 
+        <form onSubmit={savePlace}>
+          {preInput('Title','Title for your place, should be short or catchy')}
+          <input type = "text" value={title} onChange={ev => setTitle(ev.target.value)} placeholder="Title of the Place..."/>
+          {preInput('Address','Address to this Place/Location')}
+          <input type = "text" value={address} onChange={ev => setAddress(ev.target.value)} placeholder="Address of the Place..."/>
+          {preInput('Photos','Photos to this Place/Location')}
+          <PhotoUpoader addedPhotos={addedPhotos} onChange={setAddedPhotos}/>
+          {preInput('Description','Description to this Place/Location')}
+          <textarea value={description} onChange={ev => setDescription(ev.target.value)} />
+          {preInput('Perks','Select Perks for this Place/Location')}
+          <div className="grid mt-5 gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
+              <Perks selected={perks} onChange={setPerks} />
+          </div>
 
-        {preInput('Additional Info','Additional Info for this place/Location, Rules etc')}
-        <textarea value={extraInfo} onChange={ev => setExtraInfo(ev.target.value)} />
+          {preInput('Additional Info','Additional Info for this Place/Location, Rules etc')}
+          <textarea value={extraInfo} onChange={ev => setExtraInfo(ev.target.value)} />
 
-        {preInput('Check in&out Times, Size','Add checkin and Check Out Time')}
-        <div className="grid gap-2 sm:grid-cols-3"> 
-            <div className="mt-2 -mb-1">
-                <h3>Checkin Time</h3>
-                <input type="text"value={checkIn}
-                   onChange={ev => setCheckIn(ev.target.value)} placeholder="14:00"/>
-            </div>
-            <div  className="mt-2 -mb-1">
-                <h3>Checkout Time</h3>
-                <input type="text" value={checkOut}
-                   onChange={ev => setCheckOut(ev.target.value)} placeholder="14:00"/>
-            </div>
-            <div  className="mt-2 -mb-1">
-                <h3>Max Allowed Guests</h3>
-                <input type="number" value={maxGuests}
-                   onChange={ev => setMaxGuests(ev.target.value)} placeholder="2"/>
-            </div>
-            <div  className="mt-2 -mb-1">
-                <h3>Price Per Night($)</h3>
-                <input type="number" value={price}
-                   onChange={ev => setPrice(ev.target.value)} placeholder="2"/>
-            </div>
-        </div>
-        <div>
-            <button className="primary my-4">Save</button>
-        </div>
-      </form>
+          {preInput('Check In & Out Times, Allowed Guests','Add checkin and Check Out Time')}
+          <div className="grid gap-2 sm:grid-cols-3"> 
+              <div className="mt-2 -mb-1">
+                  <h3>Checkin Time</h3>
+                  <input type="text"value={checkIn}
+                    onChange={ev => setCheckIn(ev.target.value)} placeholder="14:00"/>
+              </div>
+              <div  className="mt-2 -mb-1">
+                  <h3>Checkout Time</h3>
+                  <input type="text" value={checkOut}
+                    onChange={ev => setCheckOut(ev.target.value)} placeholder="14:00"/>
+              </div>
+              <div  className="mt-2 -mb-1">
+                  <h3>Max Allowed Guests</h3>
+                  <input type="number" value={maxGuests}
+                    onChange={ev => setMaxGuests(ev.target.value)} placeholder="2"/>
+              </div>
+              <div  className="mt-2 -mb-1">
+                  <h3>Price Per Night($)</h3>
+                  <input type="number" value={price}
+                    onChange={ev => setPrice(ev.target.value)} placeholder="2"/>
+              </div>
+          </div>
+          <div>
+              <button className="primary my-4">Save</button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }

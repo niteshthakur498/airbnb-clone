@@ -46,30 +46,30 @@ const BookingWidget = ({place}) => {
       <div className="border rounded-2xl mt-4">
         <div className="flex">
           <div className="py-3 px-4">
-            <label>Check in:</label>
+            <label className="font-medium">Check in:</label>
             <input type="date"
                    value={checkIn}
                    onChange={ev => setCheckIn(ev.target.value)}/>
           </div>
           <div className="py-3 px-4 border-l">
-            <label>Check out:</label>
+            <label className="font-medium">Check out:</label>
             <input type="date" value={checkOut}
                    onChange={ev => setCheckOut(ev.target.value)}/>
           </div>
         </div>
         <div className="py-3 px-4 border-t">
-          <label>Number of guests:</label>
+          <label className="font-medium">Number of guests:</label>
           <input type="number"
                  value={numberOfGuests}
                  onChange={ev => setNumberOfGuests(ev.target.value)}/>
         </div>
         {numberOfNights > 0 && (
           <div className="py-3 px-4 border-t">
-            <label>Your full name:</label>
+            <label className="font-medium">Your full name:</label>
             <input type="text"
                    value={name}
                    onChange={ev => setName(ev.target.value)}/>
-            <label>Phone number:</label>
+            <label className="font-medium">Phone number:</label>
             <input type="tel"
                    value={phone}
                    onChange={ev => setPhone(ev.target.value)}/>
